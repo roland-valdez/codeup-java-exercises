@@ -6,19 +6,46 @@ public class ControlFlowExercises {
         String confirm;
         do {
 
-            System.out.println("What number would you like to go up to:");
-            int numberTo = scanner.nextInt();
-            System.out.println("Here is your table");
-            System.out.println("number | squared | cubed");
-            System.out.println("------ | ------- | -----");
-            for (int i = 1; i <= numberTo; i++) {
-                int square = (i * i);
-                int cubed = (i * i * i);
-                if (square > 9) {
-                    System.out.printf("%d      | %d      | %d\n", i, square, cubed);
-                } else {
-                    System.out.printf("%d      | %d       | %d\n", i, square, cubed);
+            System.out.println("What was your grade 0-100:");
+            double grade = scanner.nextByte();
+            if(grade >= 88){
+                if(grade >= 99){
+                    System.out.println("Your letter grade is an A+.");
+                } else if (grade >= 88 && grade <= 90){
+                    System.out.println("Your letter grade is an A-.");
                 }
+                else {
+                    System.out.println("Your letter grade is an A.");
+                }
+            }else if(grade >= 80){
+                if(grade >= 85){
+                    System.out.println("Your letter grade is an B+.");
+                } else if (grade >= 80 && grade <= 82){
+                    System.out.println("Your letter grade is an B-.");
+                }
+                else {
+                    System.out.println("Your letter grade is an B.");
+                }
+            }else if(grade >= 67){
+                if(grade >= 77){
+                    System.out.println("Your letter grade is an C+.");
+                } else if (grade >= 67 && grade <= 69){
+                    System.out.println("Your letter grade is an C-.");
+                }
+                else {
+                    System.out.println("Your letter grade is an C.");
+                }
+            }else if(grade >= 60){
+                if(grade >= 65){
+                    System.out.println("Your letter grade is an D+.");
+                } else if (grade >= 60 && grade <= 62){
+                    System.out.println("Your letter grade is an D-.");
+                }
+                else {
+                    System.out.println("Your letter grade is an D.");
+                }
+            }else {
+                System.out.println("Your letter grade is an F.");
             }
             System.out.println("Do you wish to continue?: Y/y");
             confirm = scanner.next();
