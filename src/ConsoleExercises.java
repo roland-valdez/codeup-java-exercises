@@ -1,6 +1,5 @@
-import javax.swing.plaf.synth.SynthTextAreaUI;
-import java.sql.SQLOutput;
 import java.util.Scanner;
+
 public class ConsoleExercises {
     public static void main(String[] args ) {
 
@@ -63,6 +62,7 @@ public class ConsoleExercises {
         System.out.println("Area of the classroom is: " + (length * width) + ".");
         System.out.println("Perimeter of the classroom is: " + ((length *2) + (width * 2))+ ".");
         System.out.println("Volume of the classroom is: " + (length * width * height) + ".");
+
     }
 
 }
