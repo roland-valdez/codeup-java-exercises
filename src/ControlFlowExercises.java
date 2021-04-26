@@ -1,12 +1,10 @@
 public class ControlFlowExercises {
     public static void main (String[] arg){
-        int i = 0;
+        double i = 2;
         do {
-            if (i % 2 == 0) {
-                System.out.println(i);
-            }
-            i += 2;
-        }while(i <= 100);
+                System.out.printf("\n%.0f",i);
+            i = i * i;
+        }while(i <= 1000000);
 
     }
 
