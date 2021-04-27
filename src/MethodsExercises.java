@@ -22,6 +22,7 @@ public class MethodsExercises {
         System.out.println(modulus(num1, num2));
         double userInput = getInteger(1, 10);
         System.out.println("userInput within the parameters = " + userInput);
+        factorial();
     }
 
     public static double addition(double num1, double num2) {
@@ -54,6 +55,14 @@ public class MethodsExercises {
         else {
             return getInteger(1,10);
         }
+    }
+    public static void factorial(){
+        double inputNum = getInteger(1, 10);
+        double factorialNum = 1;
+        for (double i = 1; i <= inputNum; i++){
+            factorialNum *= i;
+        }
+        System.out.println(factorialNum);
     }
 
 }
