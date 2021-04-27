@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 public class MethodsExercises {
@@ -23,6 +24,7 @@ public class MethodsExercises {
         double userInput = getInteger(1, 10);
         System.out.println("userInput within the parameters = " + userInput);
         factorial();
+        diceRoll();
     }
 
     public static double addition(double num1, double num2) {
@@ -64,5 +66,13 @@ public class MethodsExercises {
         }
         System.out.println(factorialNum);
     }
+     public static void diceRoll(){
+        Scanner scanner = new Scanner(System.in);
+         System.out.println("How many sides do you want the simulated dice to have?");
+         int diceSides = scanner.nextInt();
+         double diceRoll1 = Math.ceil(Math.random() * (diceSides - 1) + 1);
+         double diceRoll2 = Math.ceil(Math.random() * (diceSides - 1) + 1);
+         System.out.printf("Your first roll was a %.0f and your second roll was a %.0f", diceRoll1, diceRoll2);
 
+     }
 }
