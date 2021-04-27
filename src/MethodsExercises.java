@@ -92,6 +92,5 @@ public class MethodsExercises {
          double diceRoll1 = Math.ceil(Math.random() * (diceSides - 1) + 1);
          double diceRoll2 = Math.ceil(Math.random() * (diceSides - 1) + 1);
          System.out.printf("Your first roll was a %.0f and your second roll was a %.0f", diceRoll1, diceRoll2);
-
      }
 }
