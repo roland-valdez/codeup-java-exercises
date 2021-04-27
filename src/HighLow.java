@@ -4,7 +4,9 @@ public class HighLow {
     public static void main(String[] args){
         double randomNumber = getRandom();
         int userInput = validateInput();
-        gameHighLow(randomNumber, userInput);
+        int guesses = 1;
+        int max = 5;
+        gameHighLow(randomNumber, userInput, guesses, max);
 
     }
     public static double getRandom(){
@@ -21,21 +23,25 @@ public class HighLow {
             return validateInput();
         }
     }
-    public static void gameHighLow(double random, int input){
-        if (input == random) {
+    public static void gameHighLow(double random, int input, int guesses, int max){
+        guesses++;
+        if (input == random && guesses <= max) {
             System.out.println("You guessed the correct number");
             System.out.println("random = " + random);
             System.out.println("input = " + input);
         }
-        else if (input > random){
+        else if (input > random && guesses <= max){
             System.out.println("Lower");
             int newInput = validateInput();
-            gameHighLow(random, newInput);
+            gameHighLow(random, newInput, guesses, max);
         }
-        else {
+        else if (input < random && guesses <= max) {
             System.out.println("Higher");
             int newInput = validateInput();
-            gameHighLow(random, newInput);
+            gameHighLow(random, newInput, guesses, max);
+        } else {
+            System.out.println("You have guessed incorrectly too many times!");
+            System.out.println("You already guessed " + guesses + " times incorrectly.");
         }
 
     }
