@@ -24,7 +24,7 @@ public class ConsoleExercises {
         System.out.println("Your second word was: " + second + ".");
         System.out.println("Your third word was: " + third + ".");
 
-        System.out.print("What is your favorite quote?");
+        System.out.println("What is your favorite quote?\n");
         String quote  = scanner.nextLine();
         System.out.println("Your favorite quoute is: \"" + quote + "\"");
 
@@ -51,7 +51,7 @@ public class ConsoleExercises {
 //        System.out.println("Volume of the classroom is: " + (length * width * height) + ".");
 
         System.out.println("Enter the length, width and height of the room with decimals if needed.");
-        scanner.useDelimiter("\n");
+//        scanner.useDelimiter("\n");
         String lengthString = scanner.next();
         double length = Double.parseDouble(lengthString);
         String widthString = scanner.next();
