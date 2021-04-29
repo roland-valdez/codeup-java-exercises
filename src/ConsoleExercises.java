@@ -25,6 +25,7 @@ public class ConsoleExercises {
         System.out.println("Your third word was: " + third + ".");
 
         System.out.println("What is your favorite quote?\n");
+        String leftOver = scanner.nextLine();
         String quote  = scanner.nextLine();
         System.out.println("Your favorite quoute is: \"" + quote + "\"");
 
