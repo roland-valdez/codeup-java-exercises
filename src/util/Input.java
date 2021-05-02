@@ -3,12 +3,15 @@ package util;
 import java.util.Scanner;
 
 public class Input {
+//    private class scanner;
 
     Scanner scanner = new Scanner(System.in);
 
     public String getString() {
-        System.out.println("Enter a string.");
         String input = scanner.nextLine();
+
+        System.out.println("Enter a string.");
+        input = scanner.nextLine();
         if (!input.equals("")){
             return input;
         }
@@ -20,14 +23,15 @@ public class Input {
 
     public boolean yesNo(){
         System.out.println("Please enter yes or no");
-        String input = scanner.next();
+        String input = scanner.nextLine();
+
         return input.equalsIgnoreCase("y") || input.equalsIgnoreCase("yes");
     };
 
     public int getInt(int min, int max){
         System.out.println("Enter an integer number between " + min + " and " + max + ".");
         int input = scanner.nextInt();
-        if (input >= min || input <= max){
+        if (input >= min && input <= max){
             return input;
         }
         else {
@@ -38,20 +42,23 @@ public class Input {
 
     public int getInt(){
         System.out.println("Enter an integer number.");
-        int input = scanner.nextInt();
+//
         if (scanner.hasNextInt()){
+            int input  = scanner.nextInt();
             return input;
         }
         else {
-            System.out.println("The input is not within the parameters.");
+            String input  = scanner.next();
+            System.out.println("The input " + input +  " is not an integer.");
             return getInt();
         }
+
     };
 
     public double getDouble(double min, double max){
         System.out.println("Enter a decimal number between " + min + " and " + max + ".");
         double input = scanner.nextDouble();
-        if (input >= min || input <= max){
+        if (input >= min && input <= max){
             return input;
         }
         else {
@@ -62,12 +69,13 @@ public class Input {
 
     public double getDouble(){
         System.out.println("Enter a decimal number.");
-        double input = scanner.nextDouble();
         if (scanner.hasNextDouble()){
+            double input  = scanner.nextDouble();
             return input;
         }
         else {
-            System.out.println("The input is not within the parameters.");
+            String input  = scanner.next();
+            System.out.println("The input " + input +  " is not a decimal.");
             return getDouble();
         }
     };
