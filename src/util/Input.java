@@ -70,7 +70,7 @@ public class Input {
     public double getDouble(){
         System.out.println("Enter a decimal number.");
         if (scanner.hasNextDouble()){
-            int input  = scanner.nextDouble();
+            double input  = scanner.nextDouble();
             return input;
         }
         else {
