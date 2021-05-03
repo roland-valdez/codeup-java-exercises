@@ -5,11 +5,11 @@ import util.Input;
 import java.util.Scanner;
 
 public class CircleApp {
-
+    private static int i = 0;
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
         boolean confirm = true;
-        int i = 0;
+
         do {
             System.out.println("To calculate circle properties I am going to need the radius of the circle.");
             Input circleRadius = new Input();
