@@ -16,7 +16,7 @@ public class CircleApp {
             Circle setRadius = new Circle(circleRadius.getDouble());
             System.out.println("The area of the the circle is " + setRadius.getArea());
             System.out.println("The circumference of the the circle is " + setRadius.getCircumference());
-            System.out.println("Would you like to do another circle calculation? y/n");
+            System.out.println("Would you like to do another circle calculation? y/n");//need to replace with yes/no method
             if (!scanner.nextLine().toLowerCase().startsWith("y")){
                 confirm = false;
             }

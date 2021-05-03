@@ -8,10 +8,10 @@ public class Input {
     Scanner scanner = new Scanner(System.in);
 
     public String getString() {
-        String input = scanner.nextLine();
+//        String input = scanner.nextLine();
 
         System.out.println("Enter a string.");
-        input = scanner.nextLine();
+        String input = scanner.nextLine();
         if (!input.equals("")){
             return input;
         }
