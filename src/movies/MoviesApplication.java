@@ -1,5 +1,7 @@
 package movies;
 
+import util.Input;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class MoviesApplication {
@@ -23,10 +25,53 @@ public class MoviesApplication {
                 break;
             }
             else if(choice == 1){
-                System.out.println("display all list");
-
+                System.out.println();
+                System.out.println("These are all the movies:");
+                for (Movie movie : MoviesArray.findAll()){
+                    System.out.println("Title: " + movie.getMovie()[0] + "\tCategory: " + movie.getMovie()[1]);
+                }
+                System.out.println();
             }
-
+            else if(choice == 2){
+                System.out.println();
+                System.out.println("These are all the animated movies:");
+                for (Movie movie : MoviesArray.findAll()){
+                    if (movie.getMovie()[1].equals("animated")){
+                        System.out.println(movie.getMovie()[0]);
+                    }
+                }
+                System.out.println();
+            }
+            else if(choice == 3){
+                System.out.println();
+                System.out.println("These are all the drama movies:");
+                for (Movie movie : MoviesArray.findAll()){
+                    if (movie.getMovie()[1].equals("drama")){
+                        System.out.println(movie.getMovie()[0]);
+                    }
+                }
+                System.out.println();
+            }
+            else if(choice == 4){
+                System.out.println();
+                System.out.println("These are all the horror movies:");
+                for (Movie movie : MoviesArray.findAll()){
+                    if (movie.getMovie()[1].equals("horror")){
+                        System.out.println(movie.getMovie()[0]);
+                    }
+                }
+                System.out.println();
+            }
+            else if(choice == 5){
+                System.out.println();
+                System.out.println("These are all the sci-fi movies:");
+                for (Movie movie : MoviesArray.findAll()){
+                    if (movie.getMovie()[1].equals("scifi")){
+                        System.out.println(movie.getMovie()[0]);
+                    }
+                }
+                System.out.println();
+            }
        }
     }
 
