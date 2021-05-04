@@ -16,8 +16,9 @@ public class Movie {
         this.category = category;
     }
 
-    public String getMovie(){
-        return "Movie : " + this.name + "  Category: " + this.category;
+    public String[] getMovie(){
+        String[] movie = {this.name, this.category};
+        return movie;
     }
 
     public static void main(String[] args){
