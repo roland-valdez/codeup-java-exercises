@@ -89,7 +89,7 @@ public class MoviesApplication {
                 for (Movie movie : newList){
                     System.out.println("Title: " + movie.getMovie()[0] + "\tCategory: " + movie.getMovie()[1]);
                 }
-//                System.out.println();
+                System.out.println();
             }
        }
     }
