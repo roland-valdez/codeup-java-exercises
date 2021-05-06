@@ -3,13 +3,13 @@ package util;
 import java.util.Scanner;
 
 public class Input {
-//    private class scanner;
-
-    Scanner scanner = new Scanner(System.in);
+    private Scanner scanner;
+    public Input(){
+        scanner = new Scanner(System.in);
+    }
+//    Scanner scanner = new Scanner(System.in);
 
     public String getString() {
-//        String input = scanner.nextLine();
-
         System.out.println("Enter a string.");
         String input = scanner.nextLine();
         if (!input.equals("")){
@@ -31,6 +31,8 @@ public class Input {
     public int getInt(int min, int max){
         System.out.println("Enter an integer number between " + min + " and " + max + ".");
         int input = scanner.nextInt();
+        scanner.nextLine();
+
         if (input >= min && input <= max){
             return input;
         }
@@ -45,10 +47,12 @@ public class Input {
 //
         if (scanner.hasNextInt()){
             int input  = scanner.nextInt();
+            scanner.nextLine();
             return input;
         }
         else {
             String input  = scanner.next();
+            scanner.nextLine();
             System.out.println("The input " + input +  " is not an integer.");
             return getInt();
         }
@@ -58,6 +62,7 @@ public class Input {
     public double getDouble(double min, double max){
         System.out.println("Enter a decimal number between " + min + " and " + max + ".");
         double input = scanner.nextDouble();
+        scanner.nextLine();
         if (input >= min && input <= max){
             return input;
         }
@@ -71,10 +76,12 @@ public class Input {
         System.out.println("Enter a decimal number.");
         if (scanner.hasNextDouble()){
             double input  = scanner.nextDouble();
+            scanner.nextLine();
             return input;
         }
         else {
             String input  = scanner.next();
+            scanner.nextLine();
             System.out.println("The input " + input +  " is not a decimal.");
             return getDouble();
         }
@@ -82,10 +89,9 @@ public class Input {
     public String getString(String prompt) {
         System.out.println(prompt);
 
-        String input = scanner.nextLine();
-
         System.out.println("Enter a string.");
-        input = scanner.nextLine();
+        String input = scanner.nextLine();
+        System.out.println();
         if (!input.equals("")){
             return input;
         }
@@ -107,6 +113,7 @@ public class Input {
         System.out.println(prompt);
         System.out.println("Enter an integer number between " + min + " and " + max + ".");
         int input = scanner.nextInt();
+        scanner.nextLine();
         if (input >= min && input <= max){
             return input;
         }
@@ -122,10 +129,12 @@ public class Input {
 //
         if (scanner.hasNextInt()){
             int input  = scanner.nextInt();
+            scanner.nextLine();
             return input;
         }
         else {
             String input  = scanner.next();
+            scanner.nextLine();
             System.out.println("The input " + input +  " is not an integer.");
             return getInt();
         }
@@ -136,6 +145,7 @@ public class Input {
         System.out.println(prompt);
         System.out.println("Enter a decimal number between " + min + " and " + max + ".");
         double input = scanner.nextDouble();
+        scanner.nextLine();
         if (input >= min && input <= max){
             return input;
         }
@@ -150,10 +160,12 @@ public class Input {
         System.out.println("Enter a decimal number.");
         if (scanner.hasNextDouble()){
             double input  = scanner.nextDouble();
+            scanner.nextLine();
             return input;
         }
         else {
             String input  = scanner.next();
+            scanner.nextLine();
             System.out.println("The input " + input +  " is not a decimal.");
             return getDouble();
         }
