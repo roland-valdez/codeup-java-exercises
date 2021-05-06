@@ -5,7 +5,7 @@ import util.Input;
 import java.util.Scanner;
 
 public class CircleApp {
-    private static int i = 0;
+//    private static int i = 0;
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
         boolean confirm = true;
@@ -20,8 +20,7 @@ public class CircleApp {
             if (!scanner.nextLine().toLowerCase().startsWith("y")){
                 confirm = false;
             }
-            i++;
         } while (confirm);
-        System.out.println("You ran the calculations for circles " + i + " times.");
+        System.out.println("You ran the calculations for circles " + Circle.counter() + " times.");
     }
 }
