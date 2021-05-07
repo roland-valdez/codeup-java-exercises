@@ -82,7 +82,15 @@ public class GradesApplication {
             else {
             System.out.println(userName + " does not exist. You will have to continue to try again.");
             }
-
+            System.out.println("Woud you like to create a report of all student information? yes or no");
+            String  report = scanner.nextLine();
+            if (report.equalsIgnoreCase("y")) {
+                System.out.println("name,github_username,average");
+                for (Map.Entry student : students.entrySet()) {
+                    Student person = students.get(student.getKey());
+                    System.out.println(person.getName() + "," + student.getKey() + "," +person.getGradeAverage());
+                }
+            }
             System.out.println("Would you like to continue? yes or no?");
             String yesNo = scanner.nextLine();
             if (!yesNo.equalsIgnoreCase("y")){
