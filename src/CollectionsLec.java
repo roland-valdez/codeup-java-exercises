@@ -1,5 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.*;
 
 public class CollectionsLec {
 
@@ -217,6 +216,35 @@ public class CollectionsLec {
 //        System.out.println(usernames.isEmpty());
 
 
+/*
+
+TODO: Create a HashMap of three people in class with keys using their last name
+ and values at those keys using their first name.
+
+ Example
+
+ "Justin" could be returned from nameHashMap.get("Reich")
+ */
+        Map<String, String> usernames = new HashMap<>();
+        usernames.put("Roland", "Valdez");
+        usernames.put("Norma", "Torres");
+        usernames.put("Tatiana", "Valdez");
+        System.out.println("usernames = " + usernames);
+            /*
+
+BONUS TODO: Create a HashMap containing three people in the class with keys using their first name and values that are an ArrayList of strings containing at least two objects visible in their background.
+
+ Example
+
+ ArrayList<String> with values ("Codeup Sign", "Black Background", "Nothing Else")
+ from backgroundHashMap.get("Justin")
+
+*/
+//            HashMap<String, List<String>> usernames2 = new HashMap<>();
+//            usernames2.put("Roland", ["student", "male"]);
+//            usernames2.put("Norma", "Torres");
+//            usernames2.put("Tatiana", "Valdez");
+//            System.out.println("usernames = " + usernames2);
         }
 
 
