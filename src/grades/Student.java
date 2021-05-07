@@ -1,6 +1,7 @@
 package grades;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class Student {
@@ -27,6 +28,9 @@ public class Student {
         ArrayList<Integer> grade = new ArrayList<>();
         this.name = name;
         this.grade = grade;
+    }
+    public ArrayList<Integer> getAllGrades(){
+        return this.grade;
     }
 
     // returns the student's name
