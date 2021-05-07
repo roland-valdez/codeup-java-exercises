@@ -240,11 +240,11 @@ BONUS TODO: Create a HashMap containing three people in the class with keys usin
  from backgroundHashMap.get("Justin")
 
 */
-//            HashMap<String, List<String>> usernames2 = new HashMap<>();
-//            usernames2.put("Roland", ["student", "male"]);
-//            usernames2.put("Norma", "Torres");
-//            usernames2.put("Tatiana", "Valdez");
-//            System.out.println("usernames = " + usernames2);
+            HashMap<String, List<String>> usernames2 = new HashMap<>();
+            usernames2.put("Roland", new ArrayList<>(Arrays.asList("Codeup Text", "Shadow", "Codeup Logo")));
+            usernames2.put("Norma",new ArrayList<>(Arrays.asList("Codeup Text", "Shadow", "Codeup Logo")));
+            usernames2.put("Tatiana",new ArrayList<>(Arrays.asList("Codeup Text", "Shadow", "Codeup Logo")));
+            System.out.println("usernames = " + usernames2);
         }
 
 
