@@ -13,7 +13,14 @@ public class Student {
         roland.addGrade(0);
         roland.addGrade(100);
         System.out.println(roland.grade);
-        System.out.print(roland.getGradeAverage());
+        System.out.println(roland.getGradeAverage());
+
+        Student tatiana = new Student("Tatiana");
+        System.out.println(tatiana.getName());
+        tatiana.addGrade(50);
+        tatiana.addGrade(100);
+        System.out.println(tatiana.grade);
+        System.out.println(tatiana.getGradeAverage());
     }
 
     public Student (String name){
