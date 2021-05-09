@@ -65,8 +65,14 @@ public class Student {
                 absence++;
             }
         }
-
         return (((attendance.size() - (double) absence) / (attendance.size()) )* 100);
     }
-
+    public void dayAbsent(){
+        for (Map.Entry day : attendance.entrySet()) {
+            if (day.getValue().equals("A")){
+                System.out.println("They were absent the following days:");
+                System.out.println(day.getKey());
+            }
+        }
+    }
 }

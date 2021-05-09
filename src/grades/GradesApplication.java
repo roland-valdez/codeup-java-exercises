@@ -115,6 +115,7 @@ public class GradesApplication {
                 for (Map.Entry student : students.entrySet()) {
                     Student person = students.get(student.getKey());//gets value of student
                     System.out.println(person.getName() + " has an attendance of " + person.attendancePercentage() + "%");
+                    person.dayAbsent();
                 }
             }
 
