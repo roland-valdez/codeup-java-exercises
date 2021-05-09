@@ -3,6 +3,7 @@ package grades;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 public class Student {
@@ -57,4 +58,15 @@ public class Student {
     public void recordAttendance(String date, String value){
         attendance.put(date, value);
     }
+    public double attendancePercentage(){
+        int absence = 0;
+        for (Map.Entry day : attendance.entrySet()) {
+            if (day.getValue().equals("A")){
+                absence++;
+            }
+        }
+
+        return (((attendance.size() - (double) absence) / (attendance.size()) )* 100);
+    }
+
 }
