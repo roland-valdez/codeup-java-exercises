@@ -46,22 +46,51 @@ public class GradesApplication {
             String userName = scanner.nextLine();
 
 
-            if (students.get(userName) != null){ // looks for the value(Student) of the specified key typed in.  if not found returns null.
+            if (students.get(userName) != null) { // looks for the value(Student) of the specified key typed in.  if not found returns null.
                 String realName = students.get(userName).getName();
                 double personalGrade = students.get(userName).getGradeAverage();
                 System.out.println("The information for " + userName + " is the following.");
                 System.out.println("Their real name is " + realName + " and their average grade is " + personalGrade);
-                System.out.println("Would you like to continue to view all of their grades? yes or no");
+
+                System.out.println("Would you like to view all of " + realName + "'s grades? yes or no");
                 String allGrades = scanner.nextLine();
-                if (allGrades.equalsIgnoreCase("y")){
+                if (allGrades.equalsIgnoreCase("y")) {
                     System.out.println(students.get(userName).getAllGrades());
                 }
-            }
-           else {
-                System.out.println(userName + " does not exist. You will have to continue to try again.");
-            }
 
+                System.out.println("Would you like to view all the student averages? yes or no");
+                String everyGrade = scanner.nextLine();
+                if (everyGrade.equalsIgnoreCase("y")) {
+                    double total = 0;
+                    for (Map.Entry student : students.entrySet()) {
+                        Student person = students.get(student.getKey());
+                        System.out.println(person.getName() + " has and average of " +person.getGradeAverage());
+                    }
+                }
 
+                System.out.println("Would you like to view the class average? yes or no");
+                String classAverage = scanner.nextLine();
+                if (classAverage.equalsIgnoreCase("y")) {
+                    double total = 0;
+                    for (Map.Entry student : students.entrySet()) {
+                        Student person = students.get(student.getKey());
+                        total += person.getGradeAverage();
+                    }
+                    System.out.println("The class average is: " + total / students.size());
+                }
+            }
+            else {
+            System.out.println(userName + " does not exist. You will have to continue to try again.");
+            }
+            System.out.println("Woud you like to create a report of all student information? yes or no");
+            String  report = scanner.nextLine();
+            if (report.equalsIgnoreCase("y")) {
+                System.out.println("name,github_username,average");
+                for (Map.Entry student : students.entrySet()) {
+                    Student person = students.get(student.getKey());
+                    System.out.println(person.getName() + "," + student.getKey() + "," +person.getGradeAverage());
+                }
+            }
             System.out.println("Would you like to continue? yes or no?");
             String yesNo = scanner.nextLine();
             if (!yesNo.equalsIgnoreCase("y")){

@@ -81,10 +81,8 @@ public class MoviesApplication {
                 System.out.println(list.length);
                 Movie[] newList = Arrays.copyOf(list, (list.length + 1));
                 System.out.println(newList.length);
-//                System.out.println(newList);
-//                newList[100] = Movies.setMovie(title, category);
-//                System.out.println((newList[newList.length - 1]));
-//                System.out.println();
+                newList[newList.length - 1] = new Movie(title, category);
+//
                 System.out.println("These are all the movies:");
                 for (Movie movie : newList){
                     System.out.println("Title: " + movie.getMovie()[0] + "\tCategory: " + movie.getMovie()[1]);
