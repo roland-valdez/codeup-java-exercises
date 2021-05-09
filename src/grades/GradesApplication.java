@@ -13,24 +13,40 @@ public class GradesApplication {
         roland.addGrade(0);
         roland.addGrade(0);
         roland.addGrade(100);
+        roland.recordAttendance("2021-05-02", "A");
+        roland.recordAttendance("2021-05-03", "A");
+        roland.recordAttendance("2021-05-04", "A");
+        roland.recordAttendance("2021-05-05", "P");
 
         Student norma = new Student("Norma");
         norma.addGrade(0);
         norma.addGrade(0);
         norma.addGrade(100);
         norma.addGrade(100);
+        norma.recordAttendance("2021-05-02", "A");
+        norma.recordAttendance("2021-05-03", "P");
+        norma.recordAttendance("2021-05-04", "P");
+        norma.recordAttendance("2021-05-05", "P");
 
         Student tatiana = new Student("Tatiana");
         tatiana.addGrade(0);
         tatiana.addGrade(100);
         tatiana.addGrade(100);
         tatiana.addGrade(100);
+        tatiana.recordAttendance("2021-05-02", "A");
+        tatiana.recordAttendance("2021-05-03", "A");
+        tatiana.recordAttendance("2021-05-04", "P");
+        tatiana.recordAttendance("2021-05-05", "P");
 
         Student alex = new Student("Alex");
         alex.addGrade(100);
         alex.addGrade(100);
         alex.addGrade(100);
         alex.addGrade(100);
+        alex.recordAttendance("2021-05-02", "P");
+        alex.recordAttendance("2021-05-03", "P");
+        alex.recordAttendance("2021-05-04", "P");
+        alex.recordAttendance("2021-05-05", "P");
 
 
         students.put("novice-programmer", roland);// adds individual key value entries to hashmap
@@ -63,7 +79,7 @@ public class GradesApplication {
                 if (everyGrade.equalsIgnoreCase("y")) {
                     double total = 0;
                     for (Map.Entry student : students.entrySet()) {
-                        Student person = students.get(student.getKey());
+                        Student person = students.get(student.getKey());//gets value of student
                         System.out.println(person.getName() + " has and average of " +person.getGradeAverage());
                     }
                 }
@@ -82,6 +98,7 @@ public class GradesApplication {
             else {
             System.out.println(userName + " does not exist. You will have to continue to try again.");
             }
+
             System.out.println("Woud you like to create a report of all student information? yes or no");
             String  report = scanner.nextLine();
             if (report.equalsIgnoreCase("y")) {
@@ -91,6 +108,17 @@ public class GradesApplication {
                     System.out.println(person.getName() + "," + student.getKey() + "," +person.getGradeAverage());
                 }
             }
+
+            System.out.println("Would you like to create an absence report of all student information? yes or no");
+            String attendance = scanner.nextLine();
+            if (attendance.equalsIgnoreCase("y")) {
+                for (Map.Entry student : students.entrySet()) {
+                    Student person = students.get(student.getKey());//gets value of student
+                    System.out.println(person.getName() + " has an attendance of " + person.attendancePercentage() + "%");
+                }
+            }
+
+
             System.out.println("Would you like to continue? yes or no?");
             String yesNo = scanner.nextLine();
             if (!yesNo.equalsIgnoreCase("y")){
