@@ -10,7 +10,7 @@ public class Input {
 //    Scanner scanner = new Scanner(System.in);
 
     public String getString() {
-        System.out.println("Enter a string.");
+//        System.out.println("Enter a string.");
         String input = scanner.nextLine();
         if (!input.equals("")){
             return input;
@@ -30,16 +30,24 @@ public class Input {
 
     public int getInt(int min, int max){
         System.out.println("Enter an integer number between " + min + " and " + max + ".");
-        int input = scanner.nextInt();
-        scanner.nextLine();
+//        int input = scanner.nextInt();
+//        scanner.nextLine();
 
-        if (input >= min && input <= max){
-            return input;
-        }
-        else {
-            System.out.println("The input is not within the parameters.");
+        try {
+            int input = Integer.valueOf(getString());
+            if (input >= min && input <= max){
+                return input;
+            }
+            else {
+                System.out.println("The input is not within the parameters.");
+                return getInt(min, max);
+            }
+        } catch (NumberFormatException e){
+            System.out.println("What you entered is incorrect!");
             return getInt(min, max);
         }
+
+
     };
 
     public int getInt(){
@@ -61,13 +69,20 @@ public class Input {
 
     public double getDouble(double min, double max){
         System.out.println("Enter a decimal number between " + min + " and " + max + ".");
-        double input = scanner.nextDouble();
-        scanner.nextLine();
-        if (input >= min && input <= max){
-            return input;
-        }
-        else {
-            System.out.println("The input is not within the parameters.");
+//        double input = scanner.nextDouble();
+//        scanner.nextLine();
+        double input;
+        try {
+            input = Double.parseDouble((getString()));
+            if (input >= min && input <= max){
+                return input;
+            }
+            else {
+                System.out.println("The input is not within the parameters.");
+                return getDouble(min, max);
+            }
+        } catch (NumberFormatException e){
+            System.out.println("What you entered is incorrect!");
             return getDouble(min, max);
         }
     };
