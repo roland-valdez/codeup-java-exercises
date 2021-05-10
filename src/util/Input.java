@@ -186,5 +186,11 @@ public class Input {
         }
     };
 
+    public int getBinary(String number, int base){
+        return Integer.valueOf(number, base);
+    }
+    public int getHex(String number, int base){
+        return Integer.valueOf(number, base);
+    }
 
 }

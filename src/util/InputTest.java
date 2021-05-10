@@ -9,5 +9,7 @@ public class InputTest {
 //        System.out.println(input.getInt());//needs work
 //        System.out.println(input.getDouble());//needs work
         System.out.println(input.getDouble(1, 10));
+        System.out.println(input.getBinary("10001", 2));
+        System.out.println(input.getHex("FE1", 16));
     };
 };
